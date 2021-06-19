@@ -1,44 +1,55 @@
-const Transaction = require('./transaction');
+const Transaction = require('../wallet/transaction');
 
 class TransactionPool {
   constructor() {
-    this.transactionMap = {};
+    this.transactions = [];
   }
 
-  clear() {
-    this.transactionMap = {};
+  updateOrAddTransaction(transaction) {
+
+    console.log("TP   TX    :",transaction)
+    let transactionWithId = this.transactions.find(t => t.id === transaction.id);
+
+    if (transactionWithId) {
+      this.transactions[this.transactions.indexOf(transactionWithId)] = transaction;
+    } else {
+      this.transactions.push(transaction);
+    }
   }
 
-  setTransaction(transaction) {
-    this.transactionMap[transaction.id] = transaction;
-  }
-
-  setMap(transactionMap) {
-    this.transactionMap = transactionMap;
-  }
-
-  existingTransaction({ inputAddress }) {
-    const transactions = Object.values(this.transactionMap);
-
-    return transactions.find(transaction => transaction.input.address === inputAddress);
+  existingTransaction(address) {
+   
+    console.log ("A clump",JSON.stringify(this.transactions))
+    let klump= this.transactions.find(t => t.input.address === address);
+   
+     return klump
   }
 
   validTransactions() {
-    return Object.values(this.transactionMap).filter(
-      transaction => Transaction.validTransaction(transaction)
-    );
+    //console.log (this.transactions)
+    return this.transactions.filter(transaction => {
+
+      //console.log("a transaction",transaction)
+      const outputTotal = transaction.outputs.reduce((total, output) => {
+        return total + output.amount;
+      }, 0);
+
+      if (transaction.input.amount !== outputTotal) {
+        console.log(`Transaction Total is bad from ${transaction.input.address}.    `+outputTotal  );
+        return;
+      }
+
+      if (!Transaction.verifyTransaction(transaction)) {
+        console.log(`Invalid signature from ${transaction.input.address}.`);
+        return;
+      }
+
+      return transaction;
+    });
   }
 
-  clearBlockchainTransactions({ chain }) {
-    for (let i=1; i<chain.length; i++) {
-      const block = chain[i];
-
-      for (let transaction of block.data) {
-        if (this.transactionMap[transaction.id]) {
-          delete this.transactionMap[transaction.id];
-        }
-      }
-    }
+  clear() {
+    this.transactions = [];
   }
 }
 
