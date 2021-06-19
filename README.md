@@ -1,23 +1,41 @@
-### Build a Blockchain and Cryptocurrency | Full-Stack Edition
-
-The official code for the *Build a Blockchain and Cryptocurrency | Full-Stack Edition* course on Udemy by David Katz.
-
-Check out the course: [https://www.udemy.com/build-blockchain-full-stack](https://www.udemy.com/build-blockchain-full-stack)
-
-The blockchain is a revolutionary technology that allows for the secure, distributed, decentralized storage of information. Over the past few years, the blockchain has taken the engineering landscape by storm. Many people in the industry predict that the blockchain will disrupt the ways we interact with technology on the same way the Internet did in the early 2000s.
-
-This course is a remastered version of the original *Build a Blockchain and Cryptocurrency from Scratch* course released in early 2018: [https://www.udemy.com/build-blockchain](https://www.udemy.com/build-blockchain).
-
-This takes that course's best content, and adds a ton of additional material:
-Some of the main course highlights:
-- Code a full-on backend with test-driven development.
-- Write a full test suite for the backend.
-- Build a Blockchain in the object-oriented programming style.
-- Create a full frontend React.js web application.
-- Deploy the application to production (with multiple servers).
-- Create an API around the Blockchain.
-- Create a real-time connected peer-to-peer server with a pub/sub implementation.
-- Implement a proof-of-work algorithm.
-- Sign Transactions with cryptography and digital signature.
-- Create a Transaction Pool for a real-time list of incoming data.
-- Include transactions in core blocks of the chain.
+bubble is a next-generation, blockchain-based, social media platform which was built from the ground up 
+using node.js, socket.io and p5.js to provide a dynamic environment that mimics a social media experience 
+while remaining a mostly self-contained node in a web of peers. bubble uses the latest advancements in 
+p2p networking and web technology to create a blazingly fast, lightweight network that can run on most 
+any device. bubble is the true marketplace of ideas because bubble was designed to preserve, maintain 
+and monetize free speech regardless of ideology. 
+ 
+(io, 2021)
+Censorship is 
+not an option
+bubble can’t censor you 
+because you are in control of 
+your profile and data. This is 
+achieved via a web of 
+independent lists of bubbles 
+posted by each user and 
+linked together through a 
+pointer and a transaction 
+recorded to the blockchain. 
+There is no “Owner” but you.
+Permissionless 
+Public Space
+We are building the world’s 
+only, true digital commons 
+with public service and 
+accountability in mind. You 
+will be 100% responsible for 
+your actions with your 
+reputation clearly visible and 
+determined by your peers. 
+Self- Monetized 
+content using 
+crypto 
+bubble is more than a 
+network, it is its own 
+economy designed to be fair 
+and with the future in mind. 
+bubble uses “Monetary 
+Balancing” to create an 
+almost infinite supply that 
+remains deflationary 
